@@ -7,9 +7,19 @@ from tkinter import *
 # equation sing: #F38064
 
 root = Tk()
-root.geometry("415x530")
+root.geometry("415x590")
 root.title("calculator")
 root.configure(bg="#202020")
+root.resizable(False, False)
 
+equation_var = StringVar()
+equation_var.set(0)
+
+equation = Label(
+    root, textvariable=equation_var,
+    font=("Arial", 35, "bold"), bg="#202020", fg="white", height=3,
+    width=24, anchor="se", justify="right")
+
+equation.pack()
 
 root.mainloop()
