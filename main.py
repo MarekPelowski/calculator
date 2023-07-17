@@ -22,4 +22,14 @@ equation = Label(
 
 equation.pack()
 
+
+buttonframe = Frame(root)
+
+buttonframe.columnconfigure(0, weight=1)
+buttonframe.columnconfigure(1, weight=1)
+buttonframe.columnconfigure(2, weight=1)
+buttonframe.columnconfigure(3, weight=1)
+buttonframe.columnconfigure(4, weight=1)
+
+
 root.mainloop()
