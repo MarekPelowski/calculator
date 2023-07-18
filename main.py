@@ -23,8 +23,7 @@ equation = Label(
 equation.pack()
 
 
-buttonframe = Frame(root)
-equationframe = Frame(root)
+buttonframe = Frame(root, bg="#202020")
 
 buttonframe.columnconfigure(0, weight=1)
 buttonframe.columnconfigure(1, weight=1)
@@ -78,20 +77,20 @@ btn_comma = Button(buttonframe, text=",", bg="#3B3B3B", font=("Arial", 50), bord
 btn_comma.grid(row=3, column=2, sticky="nsew", padx=2, pady=2)
 
 
-multiplication_sign = Button(buttonframe, text="x", bg="#43484f", font=("Arial", 50), borderwidth=0)
+multiplication_sign = Button(buttonframe, text="x", bg="#323232", font=("Arial", 50), borderwidth=0)
 multiplication_sign.grid(row=0, column=3, sticky="nsew", padx=2, pady=2)
 
-subtraction_sign = Button(buttonframe, text="-", bg="#43484f", font=("Arial", 50), borderwidth=0)
+subtraction_sign = Button(buttonframe, text="-", bg="#323232", font=("Arial", 50), borderwidth=0)
 subtraction_sign.grid(row=1, column=3, sticky="nsew", padx=2, pady=2)
 
-addition_sign = Button(buttonframe, text="+", bg="#43484f", font=("Arial", 50), borderwidth=0)
+addition_sign = Button(buttonframe, text="+", bg="#323232", font=("Arial", 50), borderwidth=0)
 addition_sign.grid(row=2, column=3, sticky="nsew", padx=2, pady=2)
 
-division_sign = Button(buttonframe, text="/", bg="#43484f", font=("Arial", 50), borderwidth=0)
+division_sign = Button(buttonframe, text="/", bg="#323232", font=("Arial", 50), borderwidth=0)
 division_sign.grid(row=3, column=3, sticky="nsew", padx=2, pady=2)
 
 
-equation_sign = Button(buttonframe, text="=", bg="#43484f", font=("Arial", 50), borderwidth=0)
+equation_sign = Button(buttonframe, text="=", bg="#F38064", font=("Arial", 50), borderwidth=0)
 equation_sign.grid(row=0, column=4, sticky="nsew", rowspan=4, padx=2, pady=2)
 
 
