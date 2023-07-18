@@ -24,11 +24,13 @@ equation.pack()
 
 
 buttonframe = Frame(root)
+equationframe = Frame(root)
 
 buttonframe.columnconfigure(0, weight=1)
 buttonframe.columnconfigure(1, weight=1)
 buttonframe.columnconfigure(2, weight=1)
 buttonframe.columnconfigure(3, weight=1)
+buttonframe.columnconfigure(4, weight=1)
 
 buttonframe.rowconfigure(0, weight=1)
 buttonframe.rowconfigure(1, weight=1)
@@ -69,15 +71,28 @@ btn_3.grid(row=2, column=2, sticky="nsew")
 btn_0 = Button(buttonframe, text="0", bg="#3B3B3B", font=("Arial", 50), borderwidth=0)
 btn_0.grid(row=3, column=1, sticky="nsew")
 
+btn_clear = Button(buttonframe, text="C", bg="#3B3B3B", font=("Arial", 50), borderwidth=0)
+btn_clear.grid(row=3, column=0, sticky="nsew")
 
-multiplication_sing = Button(buttonframe, text="x", bg="#43484f", font=("Arial", 50), borderwidth=0)
-multiplication_sing.grid(row=0, column=3, sticky="nsew")
+btn_comma = Button(buttonframe, text=",", bg="#3B3B3B", font=("Arial", 50), borderwidth=0)
+btn_comma.grid(row=3, column=2, sticky="nsew")
 
-subtraction_sing = Button(buttonframe, text="-", bg="#43484f", font=("Arial", 50), borderwidth=0)
-subtraction_sing.grid(row=1, column=3, sticky="nsew")
 
-addition_sing = Button(buttonframe, text="+", bg="#43484f", font=("Arial", 50), borderwidth=0)
-addition_sing.grid(row=2, column=3, sticky="nsew")
+multiplication_sign = Button(buttonframe, text="x", bg="#43484f", font=("Arial", 50), borderwidth=0)
+multiplication_sign.grid(row=0, column=3, sticky="nsew")
+
+subtraction_sign = Button(buttonframe, text="-", bg="#43484f", font=("Arial", 50), borderwidth=0)
+subtraction_sign.grid(row=1, column=3, sticky="nsew")
+
+addition_sign = Button(buttonframe, text="+", bg="#43484f", font=("Arial", 50), borderwidth=0)
+addition_sign.grid(row=2, column=3, sticky="nsew")
+
+division_sign = Button(buttonframe, text="/", bg="#43484f", font=("Arial", 50), borderwidth=0)
+division_sign.grid(row=3, column=3, sticky="nsew")
+
+
+equation_sign = Button(buttonframe, text="=", bg="#43484f", font=("Arial", 50), borderwidth=0)
+equation_sign.grid(row=0, column=4, sticky="nsew")
 
 
 buttonframe.pack(fill="both", expand=True)
