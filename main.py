@@ -33,8 +33,7 @@ buttonframe.columnconfigure(3, weight=1)
 buttonframe.rowconfigure(0, weight=1)
 buttonframe.rowconfigure(1, weight=1)
 buttonframe.rowconfigure(2, weight=1)
-#buttonframe.rowconfigure(3, weight=1)
-#buttonframe.rowconfigure(4, weight=1)
+buttonframe.rowconfigure(3, weight=1)
 
 
 btn_7 = Button(buttonframe, text="7", bg="#43484f", font=("Arial", 50), borderwidth=0)
