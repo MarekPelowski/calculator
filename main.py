@@ -7,7 +7,7 @@ from tkinter import *
 # equation sing: #F38064
 
 root = Tk()
-root.geometry("415x590")
+root.geometry("700x590")
 root.title("calculator")
 root.configure(bg="#202020")
 #root.resizable(False, False)
@@ -92,7 +92,7 @@ division_sign.grid(row=3, column=3, sticky="nsew")
 
 
 equation_sign = Button(buttonframe, text="=", bg="#43484f", font=("Arial", 50), borderwidth=0)
-equation_sign.grid(row=0, column=4, sticky="nsew")
+equation_sign.grid(row=0, column=4, sticky="nsew", rowspan=4)
 
 
 buttonframe.pack(fill="both", expand=True)
