@@ -94,7 +94,7 @@ subtraction_sign.grid(row=1, column=3, sticky="nsew", padx=2, pady=2)
 addition_sign = Button(buttonframe, text="+", bg="#323232", font=("Arial", 50), borderwidth=0, command=lambda: add_to_label("+"))
 addition_sign.grid(row=2, column=3, sticky="nsew", padx=2, pady=2)
 
-division_sign = Button(buttonframe, text="/", bg="#323232", font=("Arial", 50), borderwidth=0, command=lambda: add_to_label("="))
+division_sign = Button(buttonframe, text="/", bg="#323232", font=("Arial", 50), borderwidth=0, command=lambda: add_to_label("/"))
 division_sign.grid(row=3, column=3, sticky="nsew", padx=2, pady=2)
 
 
