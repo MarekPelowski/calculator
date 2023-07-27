@@ -16,6 +16,14 @@ equation_var = StringVar()
 equation_var.set(0)
 equation_var_text = ("")
 
+
+def equation_func():
+    global equation, equation_var, equation_var_text
+
+    equation_var_text = eval(equation_var_text)
+    equation_var.set(equation_var_text)
+
+
 def add_to_label(symbol):
     global equation, equation_var, equation_var_text
 
@@ -98,7 +106,7 @@ division_sign = Button(buttonframe, text="/", bg="#323232", font=("Arial", 50), 
 division_sign.grid(row=3, column=3, sticky="nsew", padx=2, pady=2)
 
 
-equation_sign = Button(buttonframe, text="=", bg="#F38064", font=("Arial", 50), borderwidth=0)
+equation_sign = Button(buttonframe, text="=", bg="#F38064", font=("Arial", 50), borderwidth=0, command=equation_func)
 equation_sign.grid(row=0, column=4, sticky="nsew", rowspan=4, padx=2, pady=2)
 
 
