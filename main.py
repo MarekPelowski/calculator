@@ -10,7 +10,6 @@ root = Tk()
 root.geometry("700x590")
 root.title("calculator")
 root.configure(bg="#202020")
-#root.resizable(False, False)
 
 equation_var = StringVar()
 equation_var_text = ("")
