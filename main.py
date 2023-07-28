@@ -40,6 +40,10 @@ def equation_func():
         equation_var_text = "0"
         equation_var.set("cannot be divided by 0")
         delete_zeros()
+    except SyntaxError:
+        equation_var_text = "0"
+        equation_var.set("Syntax error")
+        delete_zeros()
 
 def add_to_label(symbol):
     global equation, equation_var, equation_var_text
