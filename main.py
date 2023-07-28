@@ -32,9 +32,14 @@ def clear():
 def equation_func():
     global equation, equation_var, equation_var_text
 
-    equation_var_text = str(eval(equation_var_text))
-    equation_var.set(equation_var_text)
-    delete_zeros()
+    try:
+        equation_var_text = str(eval(equation_var_text))
+        equation_var.set(equation_var_text)
+        delete_zeros()
+    except ZeroDivisionError:
+        equation_var_text = "0"
+        equation_var.set("cannot be divided by 0")
+        delete_zeros()
 
 def add_to_label(symbol):
     global equation, equation_var, equation_var_text
