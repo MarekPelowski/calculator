@@ -7,15 +7,21 @@ from tkinter import *
 # equation sing: #F38064
 
 root = Tk()
-root.geometry("700x590")
+root.geometry("900x590")
 root.title("calculator")
 root.configure(bg="#202020")
+root.state("zoomed")
 
 equation_var = StringVar()
 equation_var_text = ("")
 equation_var.set(equation_var_text)
 
 
+def clear():
+    global equation, equation_var, equation_var_text
+
+    equation_var_text = "0"
+    equation_var.set(equation_var_text)
 
 def equation_func():
     global equation, equation_var, equation_var_text
@@ -83,10 +89,10 @@ btn_3 = Button(buttonframe, text="3", bg="#3B3B3B", font=("Arial", 50), borderwi
 btn_3.grid(row=2, column=2, sticky="nsew", padx=2, pady=2)
 
 
-btn_0 = Button(buttonframe, text="0", bg="#3B3B3B", font=("Arial", 50), borderwidth=0, command=lambda: add_to_label("7"))
+btn_0 = Button(buttonframe, text="0", bg="#3B3B3B", font=("Arial", 50), borderwidth=0, command=lambda: add_to_label("0"))
 btn_0.grid(row=3, column=1, sticky="nsew", padx=2, pady=2)
 
-btn_clear = Button(buttonframe, text="C", bg="#3B3B3B", font=("Arial", 50), borderwidth=0)
+btn_clear = Button(buttonframe, text="C", bg="#3B3B3B", font=("Arial", 50), borderwidth=0, command=clear)
 btn_clear.grid(row=3, column=0, sticky="nsew", padx=2, pady=2)
 
 btn_comma = Button(buttonframe, text=",", bg="#3B3B3B", font=("Arial", 50), borderwidth=0, command=lambda: add_to_label("."))
