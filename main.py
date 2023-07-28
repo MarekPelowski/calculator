@@ -13,8 +13,9 @@ root.configure(bg="#202020")
 root.state("zoomed")
 
 equation_var = StringVar()
-equation_var_text = ("")
+equation_var_text = ("0")
 equation_var.set(equation_var_text)
+
 
 def delete_zeros():
     global equation, equation_var, equation_var_text
@@ -39,6 +40,12 @@ def add_to_label(symbol):
 
     equation_var_text = equation_var_text + symbol
     equation_var.set(equation_var_text)
+
+
+equation_var = StringVar()
+equation_var_text = ("0")
+equation_var.set(equation_var_text)
+delete_zeros()
 
 
 equation = Label(
