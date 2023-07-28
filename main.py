@@ -16,6 +16,10 @@ equation_var = StringVar()
 equation_var_text = ("")
 equation_var.set(equation_var_text)
 
+def delete_zeros():
+    global equation, equation_var, equation_var_text
+
+    equation_var_text = equation_var_text.lstrip('0')
 
 def clear():
     global equation, equation_var, equation_var_text
