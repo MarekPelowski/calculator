@@ -13,14 +13,15 @@ root.configure(bg="#202020")
 #root.resizable(False, False)
 
 equation_var = StringVar()
-equation_var.set(0)
 equation_var_text = ("")
+equation_var.set(equation_var_text)
+
 
 
 def equation_func():
     global equation, equation_var, equation_var_text
 
-    equation_var_text = eval(equation_var_text)
+    equation_var_text = str(eval(equation_var_text))
     equation_var.set(equation_var_text)
 
 
