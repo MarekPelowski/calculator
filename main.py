@@ -12,52 +12,60 @@ root.title("calculator")
 root.configure(bg="#202020")
 root.state("zoomed")
 
-equation_var = StringVar()
-equation_var_text = ("0")
-equation_var.set(equation_var_text)
-
 
 def delete_zeros():
-    global equation, equation_var, equation_var_text
+    global equation, equation_var, equation_text
 
-    equation_var_text = equation_var_text.lstrip('0')
+    equation_text = equation_text.lstrip('0')
 
 def clear():
-    global equation, equation_var, equation_var_text
+    global equation, equation_var, equation_text
 
-    equation_var_text = "0"
-    equation_var.set(equation_var_text)
+    equation_text = "0"
+    equation_var.set(equation_text)
     delete_zeros()
 
 def equation_func():
-    global equation, equation_var, equation_var_text
+    global equation, equation_var, equation_text
 
     try:
-        equation_var_text = str(eval(equation_var_text))
-        equation_var.set(equation_var_text)
+        equation_text = str(eval(equation_text))
+        equation_var.set(equation_text)
         delete_zeros()
     except ZeroDivisionError:
-        equation_var_text = "0"
+        equation_text = "0"
         equation_var.set("cannot be divided by 0")
         delete_zeros()
     except SyntaxError:
-        equation_var_text = "0"
-        equation_var.set("Syntax error")
+        equation_text = "0"
+        equation_var.set("syntax error")
         delete_zeros()
 
 def add_to_label(symbol):
-    global equation, equation_var, equation_var_text
+    global equation, equation_var, equation_text
 
-    equation_var_text = equation_var_text + symbol
-    equation_var.set(equation_var_text)
+    equation_text = equation_text + symbol
+    equation_var.set(equation_text)
     delete_zeros()
 
 
+operations_var = StringVar()
+operations_text = ("1")
+operations_var.set(operations_text)
+
+
 equation_var = StringVar()
-equation_var_text = ("0")
-equation_var.set(equation_var_text)
+equation_text = ("0")
+equation_var.set(equation_text)
 delete_zeros()
 
+
+operations = Label(
+    root, textvariable=operations_var,
+    font=("Arial", 35, "bold"), bg="#202020", fg="white", height=1,
+    width=24, anchor="se", justify="right")
+
+operations.pack()
 
 equation = Label(
     root, textvariable=equation_var,
