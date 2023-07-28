@@ -27,19 +27,21 @@ def clear():
 
     equation_var_text = "0"
     equation_var.set(equation_var_text)
+    delete_zeros()
 
 def equation_func():
     global equation, equation_var, equation_var_text
 
     equation_var_text = str(eval(equation_var_text))
     equation_var.set(equation_var_text)
-
+    delete_zeros()
 
 def add_to_label(symbol):
     global equation, equation_var, equation_var_text
 
     equation_var_text = equation_var_text + symbol
     equation_var.set(equation_var_text)
+    delete_zeros()
 
 
 equation_var = StringVar()
