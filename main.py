@@ -5,6 +5,7 @@ from tkinter import *
 # buttons: #3B3B3B
 # mathematical signs: #323232
 # equation sing: #F38064
+# operations: #9C9C9C
 
 root = Tk()
 root.geometry("900x590")
@@ -62,7 +63,7 @@ delete_zeros()
 
 operations = Label(
     root, textvariable=operations_var,
-    font=("Arial", 35, "bold"), bg="#202020", fg="white", height=1,
+    font=("Arial", 35, "bold"), bg="#202020", fg="#9C9C9C", height=1,
     width=24, anchor="se", justify="right")
 
 operations.pack()
