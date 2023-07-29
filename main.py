@@ -15,38 +15,38 @@ root.state("zoomed")
 
 
 def delete_zeros():
-    global equation, equation_var, equation_text
+    global current_num, current_num_var, current_num_text
 
-    equation_text = equation_text.lstrip('0')
+    current_num_text = current_num_text.lstrip('0')
 
 def clear():
-    global equation, equation_var, equation_text
+    global current_num, current_num_var, current_num_text
 
-    equation_text = "0"
-    equation_var.set(equation_text)
+    current_num_text = "0"
+    current_num_var.set(current_num_text)
     delete_zeros()
 
 def equation_func():
-    global equation, equation_var, equation_text
+    global current_num, current_num_var, current_num_text
 
     try:
-        equation_text = str(eval(equation_text))
-        equation_var.set(equation_text)
+        current_num_text = str(eval(current_num_text))
+        current_num_var.set(current_num_text)
         delete_zeros()
     except ZeroDivisionError:
-        equation_text = "0"
-        equation_var.set("cannot be divided by 0")
+        current_num_text = "0"
+        current_num_var.set("cannot be divided by 0")
         delete_zeros()
     except SyntaxError:
-        equation_text = "0"
-        equation_var.set("syntax error")
+        current_num_text = "0"
+        current_num_var.set("syntax error")
         delete_zeros()
 
 def add_to_label(symbol):
-    global equation, equation_var, equation_text
+    global current_num, current_num_var, current_num_text
 
-    equation_text = equation_text + symbol
-    equation_var.set(equation_text)
+    current_num_text = current_num_text + symbol
+    current_num_var.set(current_num_text)
     delete_zeros()
 
 
@@ -55,9 +55,9 @@ operations_text = ("1")
 operations_var.set(operations_text)
 
 
-equation_var = StringVar()
-equation_text = ("0")
-equation_var.set(equation_text)
+current_num_var = StringVar()
+current_num_text = ("0")
+current_num_var.set(current_num_text)
 delete_zeros()
 
 
@@ -68,12 +68,12 @@ operations = Label(
 
 operations.pack()
 
-equation = Label(
-    root, textvariable=equation_var,
+current_num = Label(
+    root, textvariable=current_num_var,
     font=("Arial", 35, "bold"), bg="#202020", fg="white", height=3,
     width=24, anchor="se", justify="right")
 
-equation.pack()
+current_num.pack()
 
 
 buttonframe = Frame(root, bg="#202020")
