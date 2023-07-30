@@ -26,13 +26,19 @@ def clear():
     current_num_var.set(current_num_text)
     delete_zeros()
 
+    operations_text = ""
+    operations_var.set(operations_text)
+
 def equation_func():
-    global current_num, current_num_var, current_num_text
+    global current_num, current_num_var, current_num_text, operations_text, operations_var
 
     try:
-        current_num_text = str(eval(current_num_text))
+        current_num_text = str(eval(operations_text))
         current_num_var.set(current_num_text)
         delete_zeros()
+
+        operations_text = operations_text + "="
+        operations_var.set(operations_text)
     except ZeroDivisionError:
         current_num_text = "0"
         current_num_var.set("cannot be divided by 0")
