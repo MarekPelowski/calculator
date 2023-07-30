@@ -51,7 +51,7 @@ def add_to_label(symbol):
 
 
 operations_var = StringVar()
-operations_text = ("1")
+operations_text = ("")
 operations_var.set(operations_text)
 
 
