@@ -14,13 +14,14 @@ root.configure(bg="#202020")
 root.state("zoomed")
 
 
+
 def delete_zeros():
     global current_num, current_num_var, current_num_text
 
     current_num_text = current_num_text.lstrip('0')
 
 def clear():
-    global current_num, current_num_var, current_num_text
+    global current_num, current_num_var, current_num_text, operations_text, operations_var
 
     current_num_text = "0"
     current_num_var.set(current_num_text)
@@ -56,6 +57,7 @@ def equation_func():
 
 def add_to_label(symbol):
     global current_num, current_num_var, current_num_text, operations_text, operations_var
+
 
     current_num_text = current_num_text + symbol
     current_num_var.set(current_num_text)
@@ -171,8 +173,11 @@ division_sign = Button(buttonframe, text="/", bg="#323232", font=("Arial", 50), 
 division_sign.grid(row=3, column=3, sticky="nsew", padx=2, pady=2)
 
 
+backspace = Button(buttonframe, bg="#323232", borderwidth=0)
+backspace.grid(row=0, column=4, sticky="nsew", padx=2, pady=2)
+
 equation_sign = Button(buttonframe, text="=", bg="#F38064", font=("Arial", 50), borderwidth=0, command=equation_func)
-equation_sign.grid(row=0, column=4, sticky="nsew", rowspan=4, padx=2, pady=2)
+equation_sign.grid(row=1, column=4, sticky="nsew", rowspan=4, padx=2, pady=2)
 
 
 buttonframe.pack(fill="both", expand=True)
