@@ -185,15 +185,6 @@ equation_sign.grid(row=0, column=4, sticky="nsew", rowspan=4, padx=2, pady=2)
 
 buttonframe.pack(fill="both", expand=True)
 
-# def on_enter(symbol, event):
-#     event.widget.config(bg="red")
-#     print(symbol)
-# def on_leave(event):
-#     event.widget.config(bg="SystemButtonFace")
-#
-#
-# btn_7.bind("<Enter>", lambda event, symbol="7": on_enter(symbol, event))
-# btn_7.bind("<Leave>", on_leave)
 
 def on_key_press( event):
     if event.char == '7':
@@ -236,5 +227,78 @@ def on_key_press( event):
 
 root.bind("<KeyPress>", on_key_press)
 
+def on_enter_numbers(event):
+    event.widget.config(bg="#323232")
+
+def on_leave_numbers(event):
+    event.widget.config(bg="#3B3B3B")
+
+
+def on_enter_signs(event):
+    event.widget.config(bg="#3B3B3B")
+
+def on_leave_signs(event):
+    event.widget.config(bg="#323232")
+
+
+def on_enter_equation(event):
+    event.widget.config(bg="#F08060")
+
+def on_leave_equation(event):
+    event.widget.config(bg="#F38064")
+
+
+btn_7.bind("<Enter>", on_enter_numbers)
+btn_7.bind("<Leave>", on_leave_numbers)
+
+btn_8.bind("<Enter>", on_enter_numbers)
+btn_8.bind("<Leave>", on_leave_numbers)
+
+btn_9.bind("<Enter>", on_enter_numbers)
+btn_9.bind("<Leave>", on_leave_numbers)
+
+btn_4.bind("<Enter>", on_enter_numbers)
+btn_4.bind("<Leave>", on_leave_numbers)
+
+btn_5.bind("<Enter>", on_enter_numbers)
+btn_5.bind("<Leave>", on_leave_numbers)
+
+btn_6.bind("<Enter>", on_enter_numbers)
+btn_6.bind("<Leave>", on_leave_numbers)
+
+btn_1.bind("<Enter>", on_enter_numbers)
+btn_1.bind("<Leave>", on_leave_numbers)
+
+btn_2.bind("<Enter>", on_enter_numbers)
+btn_2.bind("<Leave>", on_leave_numbers)
+
+btn_3.bind("<Enter>", on_enter_numbers)
+btn_3.bind("<Leave>", on_leave_numbers)
+
+btn_0.bind("<Enter>", on_enter_numbers)
+btn_0.bind("<Leave>", on_leave_numbers)
+
+btn_clear.bind("<Enter>", on_enter_numbers)
+btn_clear.bind("<Leave>", on_leave_numbers)
+
+btn_comma.bind("<Enter>", on_enter_numbers)
+btn_comma.bind("<Leave>", on_leave_numbers)
+
+
+multiplication_sign.bind("<Enter>", on_enter_signs)
+multiplication_sign.bind("<Leave>", on_leave_signs)
+
+subtraction_sign.bind("<Enter>", on_enter_signs)
+subtraction_sign.bind("<Leave>", on_leave_signs)
+
+addition_sign.bind("<Enter>", on_enter_signs)
+addition_sign.bind("<Leave>", on_leave_signs)
+
+division_sign.bind("<Enter>", on_enter_signs)
+division_sign.bind("<Leave>", on_leave_signs)
+
+
+equation_sign.bind("<Enter>", on_enter_equation)
+equation_sign.bind("<Leave>", on_leave_equation)
 
 root.mainloop()
