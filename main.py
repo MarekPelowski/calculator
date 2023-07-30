@@ -37,16 +37,22 @@ def equation_func():
         current_num_var.set(current_num_text)
         delete_zeros()
 
-        operations_text = operations_text + "="
-        operations_var.set(operations_text)
+        operations_var.set(operations_text + "=")
+        operations_text = current_num_text
     except ZeroDivisionError:
         current_num_text = "0"
         current_num_var.set("cannot be divided by 0")
         delete_zeros()
+
+        operations_text = ""
+        operations_var.set(operations_text)
     except SyntaxError:
         current_num_text = "0"
         current_num_var.set("syntax error")
         delete_zeros()
+
+        operations_text = ""
+        operations_var.set(operations_text)
 
 def add_to_label(symbol):
     global current_num, current_num_var, current_num_text, operations_text, operations_var
