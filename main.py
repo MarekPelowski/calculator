@@ -67,7 +67,11 @@ def add_to_label(symbol):
 def add_to_label_sign(symbol):
     global current_num, current_num_var, current_num_text, operations_text, operations_var
 
+    # checking if the last character is a mathematical sign
+
     if operations_text[-1] == "+" or operations_text[-1] == "-" or operations_text[-1] == "*" or operations_text[-1] == "/":
+        # deleting last mathematical sign
+
         operations_text = operations_text[:-1]
         operations_var.set(operations_text)
 
