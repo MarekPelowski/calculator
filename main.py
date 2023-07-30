@@ -185,5 +185,56 @@ equation_sign.grid(row=0, column=4, sticky="nsew", rowspan=4, padx=2, pady=2)
 
 buttonframe.pack(fill="both", expand=True)
 
+# def on_enter(symbol, event):
+#     event.widget.config(bg="red")
+#     print(symbol)
+# def on_leave(event):
+#     event.widget.config(bg="SystemButtonFace")
+#
+#
+# btn_7.bind("<Enter>", lambda event, symbol="7": on_enter(symbol, event))
+# btn_7.bind("<Leave>", on_leave)
+
+def on_key_press( event):
+    if event.char == '7':
+        btn_7.invoke()
+    elif event.char == '8':
+        btn_8.invoke()
+    elif event.char == '9':
+        btn_9.invoke()
+    elif event.char == '4':
+        btn_4.invoke()
+    elif event.char == '5':
+        btn_5.invoke()
+    elif event.char == '6':
+        btn_6.invoke()
+    elif event.char == '1':
+        btn_1.invoke()
+    elif event.char == '2':
+        btn_2.invoke()
+    elif event.char == '3':
+        btn_3.invoke()
+    elif event.char == '0':
+        btn_0.invoke()
+    elif event.char == '+':
+        addition_sign.invoke()
+    elif event.char == '-':
+        subtraction_sign.invoke()
+    elif event.char == '*':
+        multiplication_sign.invoke()
+    elif event.char == '/':
+        division_sign.invoke()
+    elif event.char == '=':
+        equation_sign.invoke()
+    elif event.char == '.':
+        btn_comma.invoke()
+    elif event.char == 'C':
+        btn_clear.invoke()
+    elif event.char == 'Return':
+        equation_sign.invoke()
+
+
+root.bind("<KeyPress>", on_key_press)
+
 
 root.mainloop()
