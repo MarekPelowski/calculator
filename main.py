@@ -67,6 +67,10 @@ def add_to_label(symbol):
 def add_to_label_sign(symbol):
     global current_num, current_num_var, current_num_text, operations_text, operations_var
 
+    if operations_text[-1] == "+" or operations_text[-1] == "-" or operations_text[-1] == "*" or operations_text[-1] == "/":
+        operations_text = operations_text[:-1]
+        operations_var.set(operations_text)
+
     current_num_text = ""
     operations_text = operations_text + symbol
     operations_var.set(operations_text)
