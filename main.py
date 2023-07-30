@@ -242,7 +242,7 @@ def on_leave_signs(event):
 
 
 def on_enter_equation(event):
-    event.widget.config(bg="#F08060")
+    event.widget.config(bg="#fa7757")
 
 def on_leave_equation(event):
     event.widget.config(bg="#F38064")
