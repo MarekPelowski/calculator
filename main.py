@@ -50,6 +50,11 @@ def add_to_label(symbol):
     delete_zeros()
 
 
+def add_to_label_sign(symbol):
+    global current_num, current_num_var, current_num_text
+
+
+
 operations_var = StringVar()
 operations_text = ("")
 operations_var.set(operations_text)
@@ -71,14 +76,14 @@ operations = Label(
     font=("Arial", 25, "bold"), bg="#202020", fg="#9C9C9C"
     )
 
-operations.pack(anchor="se")
+operations.pack(anchor="se", padx=100)
 
 current_num = Label(
     root, textvariable=current_num_var,
     font=("Arial", 35, "bold"), bg="#202020", fg="white")
 
 
-current_num.pack(ancho="se")
+current_num.pack(ancho="se", padx=100)
 
 
 
@@ -137,16 +142,16 @@ btn_comma = Button(buttonframe, text=",", bg="#3B3B3B", font=("Arial", 50), bord
 btn_comma.grid(row=3, column=2, sticky="nsew", padx=2, pady=2)
 
 
-multiplication_sign = Button(buttonframe, text="x", bg="#323232", font=("Arial", 50), borderwidth=0, command=lambda: add_to_label("*"))
+multiplication_sign = Button(buttonframe, text="x", bg="#323232", font=("Arial", 50), borderwidth=0, command=lambda: add_to_label_sign("*"))
 multiplication_sign.grid(row=0, column=3, sticky="nsew", padx=2, pady=2)
 
-subtraction_sign = Button(buttonframe, text="-", bg="#323232", font=("Arial", 50), borderwidth=0, command=lambda: add_to_label("-"))
+subtraction_sign = Button(buttonframe, text="-", bg="#323232", font=("Arial", 50), borderwidth=0, command=lambda: add_to_label_sign("-"))
 subtraction_sign.grid(row=1, column=3, sticky="nsew", padx=2, pady=2)
 
-addition_sign = Button(buttonframe, text="+", bg="#323232", font=("Arial", 50), borderwidth=0, command=lambda: add_to_label("+"))
+addition_sign = Button(buttonframe, text="+", bg="#323232", font=("Arial", 50), borderwidth=0, command=lambda: add_to_label_sign("+"))
 addition_sign.grid(row=2, column=3, sticky="nsew", padx=2, pady=2)
 
-division_sign = Button(buttonframe, text="/", bg="#323232", font=("Arial", 50), borderwidth=0, command=lambda: add_to_label("/"))
+division_sign = Button(buttonframe, text="/", bg="#323232", font=("Arial", 50), borderwidth=0, command=lambda: add_to_label_sign("/"))
 division_sign.grid(row=3, column=3, sticky="nsew", padx=2, pady=2)
 
 
