@@ -61,7 +61,9 @@ current_num_var.set(current_num_text)
 delete_zeros()
 
 
+fill = Label(root, bg="#202020", height=6)
 
+fill.pack()
 
 
 operations = Label(
