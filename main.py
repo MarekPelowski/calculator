@@ -60,27 +60,25 @@ current_num_text = ("0")
 current_num_var.set(current_num_text)
 delete_zeros()
 
-displayframe = Frame(root)
 
-displayframe.rowconfigure(0, weight=1)
-displayframe.rowconfigure(1, weight=1)
+
 
 
 operations = Label(
-    displayframe, textvariable=operations_var,
-    font=("Arial", 35, "bold"), bg="#202020", fg="#9C9C9C", height=1,
-    width=24, anchor="se", justify="right")
+    root, textvariable=operations_var,
+    font=("Arial", 25, "bold"), bg="#202020", fg="#9C9C9C"
+    )
 
-operations.grid(row=0, column=0, sticky="nsew")
+operations.pack(anchor="se")
 
 current_num = Label(
-    displayframe, textvariable=current_num_var,
-    font=("Arial", 35, "bold"), bg="#202020", fg="white", height=3,
-    width=24, anchor="se", justify="right")
+    root, textvariable=current_num_var,
+    font=("Arial", 35, "bold"), bg="#202020", fg="white")
 
-current_num.grid(row=1, column=0, sticky="nsew")
 
-displayframe.pack()
+current_num.pack(ancho="se")
+
+
 
 
 buttonframe = Frame(root, bg="#202020")
