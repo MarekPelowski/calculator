@@ -13,6 +13,7 @@ root.title("calculator")
 root.configure(bg="#202020")
 root.state("zoomed")
 
+backspace_img = PhotoImage(file=r"backspace.png")
 
 
 def delete_zeros():
@@ -173,7 +174,7 @@ division_sign = Button(buttonframe, text="/", bg="#323232", font=("Arial", 50), 
 division_sign.grid(row=3, column=3, sticky="nsew", padx=2, pady=2)
 
 
-backspace = Button(buttonframe, bg="#323232", borderwidth=0)
+backspace = Button(buttonframe, bg="#323232", borderwidth=0, image=backspace_img)
 backspace.grid(row=0, column=4, sticky="nsew", padx=2, pady=2)
 
 equation_sign = Button(buttonframe, text="=", bg="#F38064", font=("Arial", 50), borderwidth=0, command=equation_func)
